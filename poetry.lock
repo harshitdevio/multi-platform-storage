@@ -44,6 +44,18 @@ typing_extensions = {version = ">=4.5", markers = "python_version < \"3.13\""}
 trio = ["trio (>=0.31.0) ; python_version < \"3.10\"", "trio (>=0.32.0) ; python_version >= \"3.10\""]
 
 [[package]]
+name = "boto"
+version = "2.49.0"
+description = "Amazon Web Services Library"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "boto-2.49.0-py2.py3-none-any.whl", hash = "sha256:147758d41ae7240dc989f0039f27da8ca0d53734be0eb869ef16e3adcfa462e8"},
+    {file = "boto-2.49.0.tar.gz", hash = "sha256:ea0d3b40a2d852767be77ca343b58a9e3a4b00d9db440efb8da74b4e58025e5a"},
+]
+
+[[package]]
 name = "boto3"
 version = "1.42.59"
 description = "The AWS SDK for Python"
@@ -2069,4 +2081,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "791c5147c7eee5f073209b619c10553209a55c4a01de1f3d46211af0977d7d2c"
+content-hash = "6167f9ee63e16f81406b9b2449c28ee86858f6026d9463464cc4b4dea949aab9"
