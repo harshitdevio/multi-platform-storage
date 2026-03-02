@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     BUCKET_NAME: str 
     SUPABASE_KEY: str
     SUPABASE_URL: str
+    FILE_BASE_URL: str
 
     class Config:
         env_file = ".env"
