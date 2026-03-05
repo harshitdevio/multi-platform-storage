@@ -11,7 +11,7 @@ async def upload_file(
     user = Depends(get_current_user)
 ):
     try:
-        url = FileService.upload(file, user.id)
+        url = await FileService.upload(file, user.id)
         return {"message": "File uploaded", "url": url}
     except Exception :
         raise HTTPException(status_code=500)

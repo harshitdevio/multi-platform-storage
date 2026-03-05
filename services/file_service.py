@@ -1,11 +1,25 @@
+from fastapi import HTTPException
 from app.clients.r2 import s3
 from app.clients.supabase import supabase
 from app.core.config import settings
 
+ALLOWED_TYPES = {
+    "image/png",
+    "text/plain",
+    "video/mp4"
+}
+
 class FileService:
 
     @staticmethod
-    def upload(file, user_id):
+    async def upload(file, user_id):
+        if file.content_type not in ALLOWED_TYPES:
+            raise HTTPException(status_code=400, detail="Invalid file type")
+
+        contents = await file.read()
+        file_size = len(contents)
+        await file.seek(0)
+        
         file_key = f"{user_id}/{file.filename}"
 
         s3.upload_fileobj(
